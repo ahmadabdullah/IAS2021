@@ -268,13 +268,13 @@ literal "false"
 \begin_layout Standard
 The dynamic piece of the PF requirement is interpreted in most areas of
  the USA as two sub-requirements that must be met simultaneously: the first
- is a 0.95 PF sub-requirement at the inverter or turbine low voltage terminals;
+ is a 0.95 PF sub-requirement at the inverter or turbine low voltage terminals,
  the second is a 0.95 PF sub-requirement to be met at the high side of the
  generator substation.
  The 0.95 PF requirement at the low side terminals of the inverter or the
  turbine means that the MVA nameplate rating of the equipment cannot be
- use solely for active power (MW) injection, but a some of that MVA has
- to be reserved for reactive power (MVAr).
+ use solely for active power (MW) injection, but some of that MVA has to
+ be reserved for reactive power (MVAr).
  The 0.95 PF requirement at the high side of the generator substation can
  be met with switched shunts, capacitor or reactor banks, since some substantial
  portion of the MVAr at the inverter or turbine low side terminals gets
@@ -295,13 +295,13 @@ Any generator substation has one or more main power transformers (MPTs).
 Some areas in the USA interpret the second 0.95 PF sub-requirement as being
  measured at the low side of the MPTs instead of the high side of the MPTs.
  Some other areas, notably ERCOT in Texas, interpret the second 0.95 PF sub-requi
-rement as being measured at the POI as they include the tie-line from the
- MPTs to the transmission grid in the project.
+rement as being measured at the Point of Interconnection (POI) as they include
+ the tie-line from the MPTs to the transmission grid in the project.
  Lastly, it should be noted that the exact PF requirement, voltage range
- and point of measurement is always listed in the interconnection agreement
+ and point of measurement are always listed in the interconnection agreement
  (IA) of any project.
  In the following, it will be assumed that the PF requirement is being measured
- at the high side of the MPT for a voltage range of 1.05 Vpu to 0.95 Vpu.
+ at the POI for a voltage range of 1.05 Vpu to 0.95 Vpu.
  As will be seen later, this does not make any difference and any other
  PF requirement variation can be studied similarly.
  
@@ -335,7 +335,7 @@ Selecting transformer tap changer settings such that turbine and inverter
 \end_layout
 
 \begin_layout Enumerate
-If a project has MPTs that are equipped with a DETC, then the DETC of all
+If a project has MPTs that are equipped with DETCs, then the DETC of all
  transformers in the project has to be set such that the voltage operation
  range of the project is maximized.
  
@@ -350,9 +350,9 @@ Providing a graph showing the available reactive power at each active power
 
 \begin_layout Standard
 The paper is organized as follows: data requirement for any reactive power
- model is given in section 
+ model is given in 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "sec:Data-Requirement"
 plural "false"
 caps "false"
@@ -362,9 +362,9 @@ noprefix "false"
 
 .
  A big portion of any reactive power study is adjustment of transformer
- tap settings which is given in section 
+ tap settings which is given in 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "sec:TapChanger"
 plural "false"
 caps "false"
@@ -373,9 +373,9 @@ noprefix "false"
 \end_inset
 
 .
- Capacitor and reactor bank sizing is given in section 
+ Capacitor and reactor bank sizing is given in 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "sec:CapBankSizing"
 plural "false"
 caps "false"
@@ -384,9 +384,9 @@ noprefix "false"
 \end_inset
 
 .
- The P-Q capability chart of the project is given in section 
+ The P-Q capability chart of the project is given in 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "sec:PQCapbiloty"
 plural "false"
 caps "false"
@@ -484,6 +484,21 @@ l MVAr loss for the latest tall turbines.
 \end_layout
 
 \begin_layout Standard
+Transformer tap changer should be modeled as designed.
+ MPT Tap changer, whether OLTC or DETC, is installed on the high side winding
+ while controlling the low side winding.
+ The same goes for the WTTs and ISUs.
+ OLTCs typically have thirty-three (33) tap positions, one of which is the
+ neutral position.
+ These tap positions correspond to 1.1 Vpu to 0.9 Vpu in a step size of 0.00625
+ Vpu.
+ On the other hand, DETCs typically have five tap positions: two up, two
+ down, and one neutral position.
+ These correspond to 1.05 Vpu to 0.95 Vpu in a step size of 0.025 Vpu.
+ 
+\end_layout
+
+\begin_layout Standard
 The tie-line positive sequence impedance must be included in the project
  if the tie-line is of substantial length.
  This becomes critical if the PF requirement is at the POI rather than at
@@ -520,9 +535,9 @@ Lastly, inverter and turbine reactive power capability (P-Q curve) should
  voltage range to maximize turbine and inverter MVAr contribution.
  Maximizing turbine and inverter MVAr contribution is necessary to keep
  the capacitor bank or reactor bank size at minimal size.
- Voltage control will be detailed in section 
+ Voltage control will be detailed in 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "sec:TapChanger"
 plural "false"
 caps "false"
@@ -563,9 +578,9 @@ It is important to note two points at the P-Q curves of the turbines and
  bank size since the dynamic MVAr loss across collection is maximum.
  It is rare that a renewable project needs a reactor bank at full power
  output to meet the PF requirement.
- The reason for this will be shown in section 
+ The reason for this will be shown in 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "sec:PQCapbiloty"
 plural "false"
 caps "false"
@@ -577,7 +592,8 @@ noprefix "false"
  The zero active power output correlates with the reactor bank size.
  Some old technologies of turbines and inverters have zero MVAr capability
  at zero active power output.
- This leads to some charging MVAr at the POI due to cable charging current.
+ This leads to some charging MVAr at the POI due to cable charging current
+ under no wind or no solar irradiance conditions.
  Some IAs require that the project offsets charging MVAr, and in this case
  a reactor bank is the cheapest solution.
  
@@ -621,7 +637,7 @@ noprefix "false"
 \end_inset
 
  has three MPTs.
- The farm also has two turbine types: one is a 4.3 MW turbine and the other
+ The farm also has two turbine types: one is a 4.2 MW turbine and the other
  one is a 2.0 MW turbine.
  
 \end_layout
@@ -664,7 +680,7 @@ An iterative approach is used to reach optimum DETC setting.
 \end_layout
 
 \begin_layout Enumerate
-The voltage at the 4.3 MW turbine terminals is kept within the range 1.13
+The voltage at the 4.2 MW turbine terminals is kept within the range 1.13
  Vpu to 0.87 Vpu, per its reactive power capabilty.
 \end_layout
 
@@ -679,7 +695,7 @@ The voltage on the 34.5 kV collection system is maintained in the range 1.1
  Sometimes, 1.065 Vpu needs to be considered instead of 1.1 Vpu.
  The 1.065 Vpu corresponds to a 5% increase of the cable operating voltage
  per the IEEE standards.
- Most, if not all, 34.5 kV cables are rated at 35 kV systems.
+ Most, if not all, 34.5 kV cables are rated at 35 kV.
  Some cable vendors rate their cables at 1.1 Vpu voltage which is assumed
  in this subsection.
  The effect of this max cable operating voltage will be discussed later
@@ -691,8 +707,8 @@ The voltage on the 34.5 kV collection system is maintained in the range 1.1
 With the turbines set to produce maximum reactive power, the remaining reactive
  power needed to meet the PF requirement is supplied by the capacitor banks.
  Based on the results of this case, the voltage at the collector system
- was inspected, and the highest voltage at the collector system is 1.152
- Vpu while the lowest voltage is 1.075 Vpu.
+ is inspected, and the highest voltage at the collector system is 1.152 Vpu
+ while the lowest voltage is 1.075 Vpu.
  Based on the results of the first case, it is evident that a means to bring
  the voltage throughout the collector system down to 1.1 Vpu is needed.
  It is also clear that a reduction of approximately 0.05 Vpu is needed.
@@ -753,13 +769,13 @@ The turbines that are short listed are sorted in a descending order such
  Optimum DETC settings are reached by tapping the turbine transformers one
  at a time.
  This means that the turbine that has the highest voltage is tapped first,
- the power flow is re-solved, more cap banks are added to meet the 0.95 PF
- requirement, the power flow is re-solved, the turbine with the highest
- voltage is tapped, the power flow is re-solved, more cap banks are added,
- the system is re-solved, the turbine that has the highest voltage is tapped,
- and the process continues while observing the constraints above in this
- subsection until there is no need to tap more turbine transformers and
- the PF is met at the POI.
+ the power flow is re-solved, more capacitor banks are added to meet the
+ 0.95 PF requirement, the power flow is re-solved, the turbine with the highest
+ voltage is tapped, the power flow is re-solved, more capacitor banks are
+ added, the system is re-solved, the turbine that has the highest voltage
+ is tapped, and the process continues while observing the constraints above
+ in this subsection until there is no need to tap more turbine transformers
+ and the PF is met at the POI.
  The process is summarized in Fig.
  
 \begin_inset CommandInset ref
@@ -774,9 +790,9 @@ noprefix "false"
 .
  After the tap settings of all DETCs are finalized, those tap settings are
  used for all power flow cases to produce the reactive power capability
- of the project at the POI in Section 
+ of the project at the POI in 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "sec:PQCapbiloty"
 plural "false"
 caps "false"
@@ -841,7 +857,7 @@ noprefix "false"
  the turbines set to provide as much reactive power as possible without
  violating the constraints listed in this subsection.
  One-half (0.5) MVAr is added to each step of the capacitor banks as a safety
- margin if the reactive power at the POI was deemed too close to the limit.
+ margin if the reactive power at the POI is deemed too close to the limit.
  Table 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -853,9 +869,9 @@ noprefix "false"
 \end_inset
 
  summarizes capactitor bank requirements.
- Capacitor bank organization is given in Section 
+ Capacitor bank organization is given in 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "sec:CapBankSizing"
 plural "false"
 caps "false"
@@ -1125,8 +1141,8 @@ The main problem with wind farms that have MPTs equipped with DETCs is the
  fact that collection system voltage control is ineffective.
  An OLTC keeps the low side bus voltage at a scheduled value whenver the
  POI voltage changes.
- But in case of a MPT DETC, changes in the POI voltage gets reflected to
- the low side with no means of control that.
+ But in case of a MPT DETC, changes in the POI voltage propagate to the
+ low side with no means to control them.
  For this reason, all transformer tap settings are to be calculated based
  on the highest POI voltage possible, since this corresponds to the highest
  collection and turbine terminal voltage.
@@ -1161,9 +1177,9 @@ name "subsec:OLTC"
 
 \begin_layout Standard
 In this subsection, we consider that the project has the exact same data
- as given in section 
+ as given in 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "subsec:DETC"
 plural "false"
 caps "false"
@@ -1176,9 +1192,9 @@ noprefix "false"
 \end_layout
 
 \begin_layout Standard
-Contrary to section 
+Contrary to 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "subsec:DETC"
 plural "false"
 caps "false"
@@ -1187,12 +1203,12 @@ noprefix "false"
 \end_inset
 
 , no iterative approach is needed.
- The turbines are dispatched to maximum active and reactive power possible
+ The turbines are dispatched to maximize active and reactive power possible
  with the POI scheduled at 1.05 Vpu.
  Capacitor banks are then added to meet the PF requirement at the POI.
- This is done while observing the same constraints given in section 
+ This is done while observing the same constraints given in 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "subsec:DETC"
 plural "false"
 caps "false"
@@ -1203,8 +1219,8 @@ noprefix "false"
 .
  In the current case, and generally, the MPT OLTC solely can be used to
  bring down the voltage to levels that maximize turbine MVAr contribution
- withotu regard to the POI voltage.
- This is due to the large operation large of the OLTC which is 
+ without regard to the POI voltage.
+ This is due to the large operation range of the OLTC which is 
 \begin_inset Formula $\pm10\%$
 \end_inset
 
@@ -1214,9 +1230,9 @@ noprefix "false"
 
  in case of the DETC.
  In the current example, the capacitor banks needed are 7 MVArs per bus.
- This is to be compared against the 9 MVAr obtained in section 
+ This is to be compared against the 9 MVAr obtained in 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "subsec:DETC"
 plural "false"
 caps "false"
@@ -1226,8 +1242,8 @@ noprefix "false"
 
 .
  The reason for this is that the voltage in the collection system is now
- decooupled from the POI voltage since the OLTCs have enough bandwidths
- to control the low side bus voltage to healthy levels.
+ decooupled from the POI voltage since the OLTCs have enough bandwidth to
+ control the low side bus voltage to healthy levels.
 \end_layout
 
 \begin_layout Standard
@@ -1266,7 +1282,7 @@ The more the number of steps, the more the cost of the capacitor bank.
 
 \begin_layout Enumerate
 The space available at the substation.
- Sometimes, it is not feasible to fit in more steps in thea yard and there
+ Sometimes, it is not feasible to fit in more steps in the yard and there
  is no way around having larger step sizes.
  
 \end_layout
@@ -1278,8 +1294,8 @@ The flicker, which is the voltage rise once the capacitor bank step is switched
 \end_layout
 
 \begin_layout Standard
-The voltage rise when one step of the cap banks are engaged are given by
- the following equation taken from IEEE std 1036-2010:
+The voltage rise when one step of the capacitor banks are engaged is given
+ by the following equation taken from IEEE std 1036-2010:
 \end_layout
 
 \begin_layout Standard
@@ -1298,11 +1314,11 @@ Where
 \begin_inset Formula $Q_{step}$
 \end_inset
 
-is the step of the cap bank in MVAr and 
+ is the step of the capacitor bank in MVAr and 
 \begin_inset Formula $S_{sc}$
 \end_inset
 
-is the three phase short circuit in MVA at the study location.
+ is the three phase short circuit in MVA at the study location.
  For example, if one wants to calcualte the flicker at the low side bus,
  then the three phase short circuit at the low side bus is to be used.
  If the flicker is to be calculated at the high side bus, then the three
@@ -1316,8 +1332,8 @@ is the three phase short circuit in MVA at the study location.
 \end_layout
 
 \begin_layout Standard
-The flicker is generally a custumer requirement.
- The most comment number is 3%.
+The flicker is generally a customer requirement.
+ The most typical requirement is 3%.
  Projects that are built in remote areas tend to have large number of capacitor
  bank steps since the available short circuit is low.
  
@@ -1349,13 +1365,13 @@ Various power flow cases are created at different output levels and at different
  The wind turbines are dispatched to supply or absorb as much reactive power
  as possible to meet the PF requirement at the POI.
  To calculate the maximum reactive power that the project is capable of
- supplying in case of lagging PF, the turbines were set to supply as much
+ supplying in case of lagging PF, the turbines are set to supply as much
  reactive power without the voltage at their terminals exceeding their limits
  with the cap banks engaged at all output levels.
  In leading PF cases, the MVArs of turbines were adjusted observing the
- constrains in section 
+ constraints in 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "subsec:DETC"
 plural "false"
 caps "false"
@@ -1364,7 +1380,7 @@ noprefix "false"
 \end_inset
 
  with the capacitor banks de-energized at all output levels.
- A break point at added based on the P-Q curve of each turbin.
+ A break point at added based on the P-Q curve of each turbine.
  If there is a break point for the first turbine at 1.5 MW, then the same
  breaker point would be used for the second turbine.
  
@@ -1511,6 +1527,16 @@ noprefix "false"
  in case the project MPTs are equipped with DETCs.
  That votlage is basically flat in case the project is equipped with OLTC.
  
+\end_layout
+
+\begin_layout Standard
+It should be noted from the figures in this section that the project can
+ meet the leading PF by a large margin.
+ This is due to the reactive power capability of the turbines used.
+ Some old turbine technology cannot absorb any reactive power at standstill.
+ This necessates installing a reactor bank to compensate for cable charging
+ current at standstill.
+ 
 \begin_inset Float figure
 wide false
 sideways false
@@ -1543,23 +1569,9 @@ name "fig:MAxVolt103Vpu"
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-It should be noted from the figures in this section that the project can
- meet the leading PF by a large margin.
- This is due to the reactive power capabilty of the turbines used.
- Some turbine technoogy cann't absorb r privifde reactive power at standstill.
- This will necessate installing a reactor bank to compensate for cable charging
- current at standstill.
- 
 \end_layout
 
 \begin_layout Section
@@ -1575,15 +1587,6 @@ A detailed account on reactive power studies for renewable projects is given.
  
 \end_layout
 
-\begin_layout Section*
-Acknowledgment
-\end_layout
-
-\begin_layout Standard
-Put something here if you want.
- 
-\end_layout
-
 \begin_layout Appendix
 \begin_inset CommandInset label
 LatexCommand label
@@ -1595,11 +1598,908 @@ name "Appendix"
 \end_layout
 
 \begin_layout Standard
-Typical Collection Data
+This section provides all data needed to build the wind farm model.
+ MPT impedance is typically 8%-12% on base rating.
+ In the farm under consideration, the MPT has 10% impedance on 100 MVA base.
+ Typical X/R is 50.
+ 
 \end_layout
 
 \begin_layout Standard
-Cable data, Tranformer data
+The underground collection system layout is given in 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "CollectionData"
+literal "false"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Graphics/43PQTurbine.tif
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+4.2 MW Turbine P-Q Curve
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename Graphics/2MWPQ.jpg
+	scale 60
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+2 MW Turbine P-Q Curve
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Typical Cable Parameters in Trefoil Configuration
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="middle" width="1cm">
+<column alignment="center" valignment="middle" width="1cm">
+<column alignment="center" valignment="middle" width="1.5cm">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Cable Type
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+R 
+\end_layout
+
+\begin_layout Plain Layout
+[
+\begin_inset Formula $\mu\varOmega$
+\end_inset
+
+/ft]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $X_{L}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Plain Layout
+[
+\begin_inset Formula $\mu\varOmega$
+\end_inset
+
+/ft]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $Capacitance$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Plain Layout
+[
+\begin_inset Formula $\mu F$
+\end_inset
+
+/ft]
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1250 kcmil
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+20
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+37
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.120
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1000 kcmil
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+25
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+39
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.092
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+750 kcmil
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+34
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+40
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.082
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+500 kcmil
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+49
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+43
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.070
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4/0 AWG
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+117
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+48
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.052
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1/0 AWG
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+251
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+52
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.042
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Typical WTT Data
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="9" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="middle" width="2cm">
+<column alignment="center" valignment="middle" width="2cm">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Data
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2.0 Turbine Transformer
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4.3 Turbine Transformer
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Vector Group
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dyn5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dyn5
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+No Load kW Losses
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7.5 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10.2 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MVA 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2.08
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5.15
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+% Impedance
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+11.66
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+9.54
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+X/R
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+14.47
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+15.4
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Tap Changer
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DETC (
+\begin_inset Formula $\pm5\%,\pm2.5\%)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DETC (
+\begin_inset Formula $\pm5\%,\pm2.5\%)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Downtower Cable
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1/0 AWG
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4/0 AWG
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Cable Length (m)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+80 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+90
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Typical 138 kV 10-mile Tie Line Data
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+R [
+\begin_inset Formula $\varOmega$
+\end_inset
+
+]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $X_{L}$
+\end_inset
+
+ [
+\begin_inset Formula $\varOmega$
+\end_inset
+
+]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $Capacitance$
+\end_inset
+
+ [
+\begin_inset Formula $\mu F$
+\end_inset
+
+]
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.08
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6.07
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3.77 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Graphics/INVPQ.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+3.36 MW Solar Inverter P-Q Curve
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Graphics/PQINV.jpg
+	scale 35
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+0.81 MW Solar Inverter P-Q Curve
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage clearpage
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard

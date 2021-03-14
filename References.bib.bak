@@ -13,4 +13,10 @@
   year         = {2015},
 }
 
+@Other{CollectionData,
+  author = {Ahmad Abdullah},
+  title  = {Large Wind Farm Collection},
+  url    = {http://www.arresterworks.com/arresterfacts/pdf_files/Arrester_Characteristics_for_ATPDraw_Users.xls},
+}
+
 @Comment{jabref-meta: databaseType:bibtex;}
