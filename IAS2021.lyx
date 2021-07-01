@@ -16,6 +16,9 @@
 %\newcommand{\squeezeup}{\vspace{-2.5mm}}
 \end_preamble
 \use_default_options false
+\begin_modules
+enumitem
+\end_modules
 \maintain_unincluded_children false
 \language english
 \language_package none
@@ -327,7 +330,7 @@ rement as being measured at the Point of Interconnection (POI) as they include
  and point of measurement are listed in the interconnection agreement (IA)
  of any project.
  In the following, it will be assumed that the PF requirement is being measured
- at the POI for a voltage range of 1.05 Vpu to 0.95 Vpu.
+ at the high side of the MPT for a voltage range of 1.05 Vpu to 0.95 Vpu.
  As will be seen later, this does not make any difference and any other
  PF requirement variation can be studied similarly.
  
@@ -511,7 +514,7 @@ al MVAr loss for the latest tall turbines.
 
 \begin_layout Standard
 Transformer tap changer should be modeled as designed.
- MPT Tap changer, whether OLTC or DETC, is installed on the high side winding
+ MPT tap changer, whether OLTC or DETC, is installed on the high side winding
  while controlling the low side winding.
  The same goes for the WTTs and ISUs.
  OLTCs typically have thirty-three (33) tap positions, one of which is the
@@ -641,7 +644,7 @@ This section discusses MPT and WTT (ISU in case of solar or storage projects),
  Transformer tap changer setting selection is heavily influenced whether
  the project has an MPT equipped with OLTC or DETC.
  Both are given in the subsections below.
- We will use the wind farm data in the 
+ We will use the wind project data in the 
 \begin_inset CommandInset ref
 LatexCommand nameref
 reference "Appendix"
@@ -652,7 +655,7 @@ noprefix "false"
 \end_inset
 
  to guide this discussion.
- The wind farm in the 
+ The wind project in the 
 \begin_inset CommandInset ref
 LatexCommand nameref
 reference "Appendix"
@@ -663,8 +666,8 @@ noprefix "false"
 \end_inset
 
  has three MPTs.
- The farm also has two turbine types: one is a 4.2 MW turbine and the other
- one is a 2.0 MW turbine.
+ The project also has two turbine types: one is a 4.2 MW turbine and the
+ other one is a 2.0 MW turbine.
  
 \end_layout
 
@@ -731,12 +734,12 @@ The voltage on the 34.5 kV collection system is maintained in the range 1.1
 \begin_layout Standard
 With the turbines set to produce maximum reactive power, the remaining reactive
  power needed to meet the PF requirement is supplied by the capacitor banks.
- Based on the results of this case, the voltage at the collector system
- is inspected, and the highest voltage at the collector system is 1.1053
- Vpu while the lowest voltage is 1.1558 Vpu.
+ Based on the results of this case, the voltage at the turbine terminals
+ is inspected, and the highest voltage at the collector system is 1.1166
+ Vpu while the lowest voltage is 1.1639 Vpu.
  Based on the results of the first case, it is evident that a means to bring
  the voltage throughout the collector system down to 1.1 Vpu is needed.
- It is also clear that a reduction of approximately 0.05 Vpu is needed.
+ It is also clear that a reduction of approximately 0.064 Vpu is needed.
  This reduction can be carried out in two ways: 
 \end_layout
 
@@ -744,14 +747,19 @@ With the turbines set to produce maximum reactive power, the remaining reactive
 The first one is by adjusting the DETC settings of the MPTs at 1.05 (+2 tap)
  which effectively reduces the voltage by 0.05 pu throughout the collector
  system.
- 
+ The remaining voltage reduction is achieved by tapping the turbines with
+ the highest voltage at 1.025 (+1 tap).
 \end_layout
 
 \begin_layout Itemize
 The second one is by adjusting the DETC settings of the MPTs at 1.025 (+1
  tap).
- The remaining 0.025 pu voltage reduction can be obtained by tapping some
- turbine transformers up one position (turns ratio 1.025 Vpu:1 Vpu).
+ The remaining 0.039 pu voltage reduction can be obtained by tapping some
+ turbine transformers.
+ The turbines with the highest voltage (above 1.125 Vpu) are tapped at 1.05
+ (+2 tap).
+ Once all voltages are below 1.125 Vpu, then the remaining turbines with
+ terminal voltages above 1.1 are tapped at 1.025 (+1 tap).
  
 \end_layout
 
@@ -797,13 +805,12 @@ The turbines that are short listed are sorted in a descending order such
  0.95 PF requirement, the power flow is re-solved, and the process continues
  while observing the constraints above in this subsection until there is
  no need to tap more WTTs and the PF is met at the POI.
- The process is summarized in Fig.
- 
+ The process is summarized in 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "fig:Iterative-Process-to"
 plural "false"
-caps "false"
+caps "true"
 noprefix "false"
 
 \end_inset
@@ -816,7 +823,7 @@ noprefix "false"
 LatexCommand formatted
 reference "sec:PQCapbiloty"
 plural "false"
-caps "false"
+caps "true"
 noprefix "false"
 
 \end_inset
@@ -863,12 +870,12 @@ name "fig:Iterative-Process-to"
 \begin_layout Standard
 The next step involves determining the size of the capacitor banks.
  The voltage at the POI is then scheduled at 0.95 Vpu in the case with all
- DETCs set per the previous paragraph as given in Table 
+ DETCs set per the previous paragraph as given in 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "tab:Required-DETC-Settings"
 plural "false"
-caps "false"
+caps "true"
 noprefix "false"
 
 \end_inset
@@ -879,12 +886,12 @@ noprefix "false"
  violating the constraints listed in this subsection.
  One-half (0.5) MVAr is added to each step of the capacitor banks as a safety
  margin if the reactive power at the POI is deemed too close to the limit.
- Table 
+ 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "tab:Required-DETC-Settings"
 plural "false"
-caps "false"
+caps "true"
 noprefix "false"
 
 \end_inset
@@ -934,7 +941,7 @@ name "tab:Required-DETC-Settings"
 <lyxtabular version="3" rows="3" columns="4">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="middle" width="3cm">
-<column alignment="center" valignment="top" width="3cm">
+<column alignment="left" valignment="middle" width="5cm">
 <column alignment="center" valignment="middle" width="3cm">
 <column alignment="center" valignment="middle" width="3cm">
 <row>
@@ -1023,7 +1030,7 @@ Safety Margin
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Itemize
@@ -1032,15 +1039,11 @@ Safety Margin
 
 \begin_deeper
 \begin_layout Itemize
-WTT-24-02
-\end_layout
-
-\begin_layout Itemize
-WTT-24-03
-\end_layout
-
-\begin_layout Itemize
 WTT-24-01
+\end_layout
+
+\begin_layout Itemize
+WTT-34-01
 \end_layout
 
 \begin_layout Itemize
@@ -1067,6 +1070,176 @@ WTT-34-06
 WTT-34-07
 \end_layout
 
+\end_deeper
+\begin_layout Itemize
++1.025 Vpu (+1 tap)
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="1" columns="2">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="2.3cm">
+<column alignment="left" valignment="top" width="2.3cm">
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Itemize
+\noindent
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+label=–
+\end_layout
+
+\end_inset
+
+WTT-31-01
+\end_layout
+
+\begin_layout Itemize
+\noindent
+WTT-31-02
+\end_layout
+
+\begin_layout Itemize
+\noindent
+WTT-31-04
+\end_layout
+
+\begin_layout Itemize
+\noindent
+WTT-31-05
+\end_layout
+
+\begin_layout Itemize
+\noindent
+WTT-31-06
+\end_layout
+
+\begin_layout Itemize
+\noindent
+WTT-32-01
+\end_layout
+
+\begin_layout Itemize
+\noindent
+WTT-32-02
+\end_layout
+
+\begin_layout Itemize
+\noindent
+WTT-32-03
+\end_layout
+
+\begin_layout Itemize
+\noindent
+WTT-32-04
+\end_layout
+
+\begin_layout Itemize
+\noindent
+WTT-32-05
+\end_layout
+
+\begin_layout Itemize
+\noindent
+WTT-32-06
+\end_layout
+
+\begin_layout Itemize
+\noindent
+WTT-13-01
+\end_layout
+
+\begin_layout Itemize
+\noindent
+WTT-23-01
+\end_layout
+
+\begin_layout Itemize
+\noindent
+WTT-23-02
+\end_layout
+
+\begin_layout Itemize
+\noindent
+WTT-23-03
+\end_layout
+
+\begin_layout Itemize
+\noindent
+WTT-23-04
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Itemize
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+label=–
+\end_layout
+
+\end_inset
+
+WTT-33-01
+\end_layout
+
+\begin_layout Itemize
+WTT-33-02
+\end_layout
+
+\begin_layout Itemize
+WTT-33-03
+\end_layout
+
+\begin_layout Itemize
+WTT-33-04
+\end_layout
+
+\begin_layout Itemize
+WTT-33-05
+\end_layout
+
+\begin_layout Itemize
+WTT-33-06
+\end_layout
+
+\begin_layout Itemize
+WTT-14-01
+\end_layout
+
+\begin_layout Itemize
+WTT-14-02
+\end_layout
+
+\begin_layout Itemize
+WTT-24-02
+\end_layout
+
+\begin_layout Itemize
+WTT-24-03
+\end_layout
+
+\begin_layout Itemize
+WTT-24-04
+\end_layout
+
+\begin_layout Itemize
+WTT-24-05
+\end_layout
+
+\begin_layout Itemize
+WTT-24-06
+\end_layout
+
 \begin_layout Itemize
 WTT-34-08
 \end_layout
@@ -1076,38 +1249,25 @@ WTT-34-09
 \end_layout
 
 \begin_layout Itemize
-WTT-34-01
+WTT-34-10
 \end_layout
 
-\end_deeper
+\begin_layout Itemize
+WTT-34-11
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Itemize
 +1.05 Vpu (+2 tap)
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-WTT-11-01 WTT-11-02
-\end_layout
-
-\begin_layout Itemize
-WTT-11-03
-\end_layout
-
-\begin_layout Itemize
-WTT-11-05
-\end_layout
-
-\begin_layout Itemize
-WTT-11-06
-\end_layout
-
-\begin_layout Itemize
-WTT-12-06
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-+1.025 Vpu (+1 tap)
 \end_layout
 
 \begin_deeper
@@ -1122,7 +1282,7 @@ All other turbines
 \begin_inset Text
 
 \begin_layout Plain Layout
-One Step of 9.5 MVAr at each MV bus (3 x 9.5 MVAr)
+One Step of 6 MVAr at each MV bus (3 x 6 MVAr)
 \end_layout
 
 \end_inset
@@ -1131,7 +1291,7 @@ One Step of 9.5 MVAr at each MV bus (3 x 9.5 MVAr)
 \begin_inset Text
 
 \begin_layout Plain Layout
-One Step of 10 MVAr at each MV bus (3 x 10 MVAr)
+One Step of 6.5 MVAr at each MV bus (3 x 6.5 MVAr)
 \end_layout
 
 \end_inset
@@ -1158,8 +1318,8 @@ From operational viewpoint, it is not recommended to set the MPT DETC at
 \end_layout
 
 \begin_layout Standard
-The main problem with wind farms that have MPTs equipped with DETCs is the
- fact that collection system voltage control is ineffective.
+The main problem with wind projects that have MPTs equipped with DETCs is
+ the fact that collection system voltage control is ineffective.
  An OLTC keeps the low side bus voltage at a scheduled value whenever the
  POI voltage changes.
  But in case of a MPT DETC, changes in the POI voltage propagate to the
@@ -1201,7 +1361,7 @@ In this section, we consider that the project has the exact same data as
  given in 
 \begin_inset CommandInset ref
 LatexCommand formatted
-reference "sec:Data-Requirement"
+reference "subsec:DETC"
 plural "false"
 caps "true"
 noprefix "false"
@@ -1230,7 +1390,7 @@ noprefix "false"
  This is done while observing the same constraints given in 
 \begin_inset CommandInset ref
 LatexCommand formatted
-reference "fig:Iterative-Process-to"
+reference "subsec:DETC"
 plural "false"
 caps "true"
 noprefix "false"
@@ -1250,8 +1410,8 @@ noprefix "false"
 \end_inset
 
  in case of the DETC.
- In the current example, the capacitor banks needed are 7 MVArs per bus.
- This is to be compared against the 9 MVAr obtained in 
+ In the current example, the capacitor banks needed are 1.5 MVArs per bus.
+ This is to be compared against the 6.5 MVAr obtained in 
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "subsec:DETC"
@@ -1273,8 +1433,8 @@ When the turbine MVAr contribution is highly dependent on the turbine terminal
  However, adjustments of the DETC of WTTs will probably need to happen to
  bring the voltage at turbine terminals to levels that can maximize turbine
  MVAr contribution.
- In some other instances, such optimization is not possible due to the the
- length of the collection system.
+ In some other instances, such optimization is not possible due to the length
+ of the collection system.
  
 \end_layout
 
@@ -1316,7 +1476,15 @@ The flicker, which is the voltage rise once the capacitor bank step is switched
 
 \begin_layout Standard
 The voltage rise when one step of the capacitor banks are engaged is given
- by the following equation taken from IEEE std 1036-2010:
+ by the following equation taken from IEEE std 1036-2020
+\begin_inset CommandInset citation
+LatexCommand cite
+key "IEEE1036"
+literal "false"
+
+\end_inset
+
+:
 \end_layout
 
 \begin_layout Standard
@@ -1395,7 +1563,7 @@ Various power flow cases are created at different output levels and at different
 LatexCommand formatted
 reference "subsec:DETC"
 plural "false"
-caps "false"
+caps "true"
 noprefix "false"
 
 \end_inset
@@ -1413,13 +1581,12 @@ In case of MPTs with DETC, analysis reveals that the wind project will be
  1.05 Vpu to 0.97 Vpu at the POI.
  This holds regardless of the way the DETCs are set.
  The full reactive power capability of the project at different voltage
- levels is provided in Fig.
- 
+ levels is provided in 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "fig:P-Q-Capability-ofDETC"
 plural "false"
-caps "false"
+caps "true"
 noprefix "false"
 
 \end_inset
@@ -1467,24 +1634,22 @@ As can be seen from the graph, the project can meet the lagging PF requirement
 \end_layout
 
 \begin_layout Standard
-In case of the OLTC, the project capability is given in Fig.
- 
+In case of the OLTC, the project capability is given in 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "fig:PQOLTC"
 plural "false"
-caps "false"
+caps "true"
 noprefix "false"
 
 \end_inset
 
- As can be seen from Fig.
- 
+ As can be seen from 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "fig:PQOLTC"
 plural "false"
-caps "false"
+caps "true"
 noprefix "false"
 
 \end_inset
@@ -1534,13 +1699,12 @@ name "fig:PQOLTC"
 
 \begin_layout Standard
 The max collection system voltage when the voltage is 1.03 Vpu (with power
- factor of 0.95) at the POI is plotted in Fig.
- 
+ factor of 0.95) at the POI is plotted in 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "fig:MAxVolt103Vpu"
 plural "false"
-caps "false"
+caps "true"
 noprefix "false"
 
 \end_inset
@@ -1601,8 +1765,8 @@ Conclusions
 
 \begin_layout Standard
 A detailed account on reactive power studies for renewable projects is given.
- The difference between voltage control when the farm is equipped with DETC
- as opposed to OLTC is explained.
+ The difference between voltage control when the project is equipped with
+ DETC as opposed to OLTC is explained.
  Sizing and organizing the capacitor banks are shown.
  Typical collection and system data are also provided.
  
@@ -1619,9 +1783,10 @@ name "Appendix"
 \end_layout
 
 \begin_layout Standard
-This section provides all data needed to build the wind farm model.
+This section provides all data needed to build the wind project model.
  MPT impedance is typically 8%-12% on base rating.
- In the farm under consideration, the MPT has 10% impedance on 100 MVA base.
+ In the project under consideration, the MPT has 10% impedance on 100 MVA
+ base.
  Typical X/R is 50.
  
 \end_layout
@@ -2078,7 +2243,7 @@ Data
 \begin_inset Text
 
 \begin_layout Plain Layout
-4.3 Turbine Transformer
+4.32 Turbine Transformer
 \end_layout
 
 \end_inset
@@ -2398,11 +2563,11 @@ R [
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $Capacitance$
+\begin_inset Formula $Susceptance$
 \end_inset
 
  [
-\begin_inset Formula $\mu F$
+\begin_inset Formula $\mu\varOmega$
 \end_inset
 
 ]
@@ -2416,7 +2581,7 @@ R [
 \begin_inset Text
 
 \begin_layout Plain Layout
-1.08
+0.599
 \end_layout
 
 \end_inset
@@ -2425,7 +2590,7 @@ R [
 \begin_inset Text
 
 \begin_layout Plain Layout
-6.07
+5.666
 \end_layout
 
 \end_inset
@@ -2434,7 +2599,7 @@ R [
 \begin_inset Text
 
 \begin_layout Plain Layout
-3.77 
+75.168
 \end_layout
 
 \end_inset
@@ -2510,10 +2675,7 @@ status collapsed
 \end_inset
 
  
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage clearpage
+\begin_inset Newpage cleardoublepage
 \end_inset
 
 
