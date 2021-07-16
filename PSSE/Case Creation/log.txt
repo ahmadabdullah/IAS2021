@@ -1,0 +1,109 @@
+MPT/PMT/ISU A Data
+MVA: 5.15000
+Vector Group: Dyn5
+kV: 34.5000
+Z%: 9.53780
+X/R: 15.3500
+No Load Losses: 0.000100000
+# of Taps: 5
+Z01%: 9.10000
+X/R01: 14.6430
+Cable Type: '279'
+Cable Length: 82.0000
+
+Machine A Sequence Data
+Rpu: 0.00000
+XSynch: 0.170000
+XTrans: 2.00000
+XSubTrans: 2.30000
+RNeg: 0.00000
+XNeg: 2.40000
+RZero: 0.00000
+XZero: 4.00000
+
+Machine A Reactive Power Data
+Turbine Manufacturer: Vestas
+kV: 0.700000
+MVA Rating: 5.15000
+MW Rating: 4.20000
+MaxLag: 1.99800
+MaxLead: -1.49000
+Min Voltage: 0.900000
+Max Voltage: 1.10000
+
+MPT/PMT/ISU B Data
+MVA: 2.08000
+Vector Group: Dyn5
+kV: 34.5000
+Z%: 11.6600
+X/R: 14.4700
+No Load Losses: 8.00000e-05
+# of Taps: 5
+Z01%: 11.4300
+X/R01: 14.1750
+Cable Type: '279'
+Cable Length: 82.0000
+
+Machine B Sequence Data
+Rpu: 0.00000
+XSynch: 0.125600
+XTrans: 0.197500
+XSubTrans: 3.28200
+RNeg: 0.00000
+XNeg: 0.197500
+RZero: 0.00000
+XZero: 0.397600
+
+Machine B Reactive Power Data
+Turbine Manufacturer: Vestas
+kV: 0.700000
+MVA Rating: 2.08000
+MW Rating: 2.00000
+MaxLag: 0.406000
+MaxLead: -0.583000
+Min Voltage: 0.900000
+Max Voltage: 1.10000
+
+POI Data
+Rpu: 0.000780000
+XSynch: 0.0122000
+XTrans: 0.0122000
+XSubTrans: 0.0122250
+RNeg: 0.000784000
+XNeg: 0.0122590
+RZero: 0.00167000
+XZero: 0.0115000
+
+MPT Data
+MVA: 125.000
+Vector Group: YNyn0
+kV: 230.000
+Terr kV: 12.0000
+Z%: 12.5000
+X/R: 50.0000
+No Load Losses: 0.000410000
+# of Taps: 5
+Z01%: 12.5000
+XR01: 50.0000
+Z02%: 4.38000
+XR02: 12.6500
+Z03%: 15.1100
+XR03: 26.1200
+
+Tieline Data
+R: 0.599240
+X: 5.66552
+B: 7.51679e-05
+R0: 5.49566
+X0: 22.1298
+B0: 3.74770e-05
+Length: 10.0000
+
+Cable Data
+                  1250      1000       750       500       4/0       1/0      1272       279
+l_f_r:           2.00000e-05  2.50000e-05  3.40000e-05  4.90000e-05  0.000117000  0.000251000  1.24100e-05  0.000347000
+l_f_x:           3.70000e-05  3.90000e-05  4.00000e-05  4.30000e-05  4.80000e-05  5.40000e-05  0.000127200  0.000272000
+l_f_b:           4.52390e-08  3.46830e-08  3.09130e-08  2.63890e-08  1.84990e-08  1.47064e-08  1.45800e-08  9.42000e-08
+l_f_rseq:        7.40000e-05  7.90000e-05  8.80000e-05  0.000103000  0.000171000  0.000304000  9.72200e-06  0.000347000
+l_f_xseq:        0.000730000  0.000700000  0.000741000  0.000717000  0.000767000  0.000746000  3.78100e-05  0.000272000
+l_f_bseq:        4.52390e-08  3.46830e-08  3.09130e-08  2.63890e-08  1.96040e-08  1.58340e-08  6.76300e-09  0.000272000
