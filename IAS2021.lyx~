@@ -188,22 +188,41 @@ IEEE
 \end_inset
 
 
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Curtis Roe is with Mortenson Construction, Minneapolis, MN, USA, e-mail:
+ 
+\begin_inset CommandInset href
+LatexCommand href
+target "curtis.roe@mortenson.com"
+type "mailto:"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Abstract
 This paper provides a detailed account on reactive power studies for renewable
  energy projects in the USA.
- Projects with main power transformers (MPTs) equipped with either on-load
- tap changers (OLTC) or de-energized tap changers (DETC) are analyzed.
+ Projects are analyzed with main power transformers (MPTs) equipped with
+ either on-load tap changers (OLTCs) or de-energized tap changers (DETCs).
  Voltage control throughout the collection system is discussed.
- Optimum capacitor bank sizing is shown.
- Lastly, project reactive power capability, known as P-Q capability, is
- derived.
+ This paper also provides optimum capacitor bank sizing and a derived project
+ reactive power capability, known as the P-Q capability.
 \end_layout
 
 \begin_layout Keywords
-Wind Energy, Solar Energy, Energy Storage, Reactive Power Control, Voltage
- Control
+Wind energy, solar energy, energy storage, reactive power control, voltage
+ control
 \end_layout
 
 \begin_layout Section
@@ -272,9 +291,9 @@ status collapsed
 \end_inset
 
  system operators (ISOs) and transmission system operators (TSOs) require
- any solar, wind or battery energy storage project to perform a reactive
+ any solar, wind or battery energy storage projects to perform a reactive
  power study before interconnecting to the transmission grid.
- This is due to the Federal Energy Regulatory Commission (FERC) order no.
+ This is due to Federal Energy Regulatory Commission (FERC) Order No.
  827 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -283,9 +302,7 @@ literal "false"
 
 \end_inset
 
-.
- FERC order no.
- 827 mandates that all non-synchronous generation projects meet the 0.95
+, which mandates that all non-synchronous generation projects meet the 0.95
  power factor (PF) requirement at the high side of the generator substation,
  unless ISOs and TSOs establish a different PF range.
  The voltage range of this PF requirement is set by the individual ISO and
@@ -296,16 +313,16 @@ literal "false"
 
 \begin_layout Standard
 The dynamic piece of the PF requirement is interpreted in most areas of
- the USA as two sub-requirements that must be met simultaneously: the first
- is a 0.95 PF sub-requirement at the inverter or turbine low voltage terminals,
- the second is a 0.95 PF sub-requirement to be met at the high side of the
- generator substation.
- The 0.95 PF requirement at the low side terminals of the inverter or the
- turbine means that the MVA nameplate rating of the equipment cannot be
- used solely for active power (MW) injection, but some of that MVA has to
- be reserved for reactive power (MVAr).
+ the USA as two sub-requirements that must be met simultaneously.
+ The first is a 0.95 PF sub-requirement met at the inverter or turbine low
+ voltage terminals; the second is a 0.95 PF sub-requirement met at the high
+ side of the generator substation.
+ The 0.95 PF requirement at the low side terminals of the inverter or turbine
+ means that the MVA (mega Volt Amp) nameplate rating of the equipment cannot
+ be used solely for active power (MW) injection.
+ Some of that MVA has to be reserved for reactive power (MVAr).
  The 0.95 PF requirement at the high side of the generator substation can
- be met with switched shunts, capacitor or reactor banks, since some of
+ be met with switched shunts- capacitor or reactor banks- since some of
  the MVAr at the inverter or turbine low side terminals gets lost throughout
  collection.
  
@@ -313,8 +330,8 @@ The dynamic piece of the PF requirement is interpreted in most areas of
 
 \begin_layout Standard
 Any generator substation has one or more main power transformers (MPTs).
- These MPTs step up the collection system voltage, typically 34.5 kV to the
- transmission system voltage, typically 138 kV or higher.
+ These MPTs step up the collection system voltage, typically 34.5 kV, to
+ the transmission system voltage which is typically 138 kV or higher.
  The inverter or turbine transformers step up the inverter or turbine low
  side voltage, typically at 0.63-0.72 kV to the collection system voltage.
  
@@ -322,41 +339,49 @@ Any generator substation has one or more main power transformers (MPTs).
 
 \begin_layout Standard
 Some areas in the USA interpret the second 0.95 PF sub-requirement as being
- measured at the low side of the MPTs instead of the high side of the MPTs.
+ measured at the low side of the MPTs instead of the high side.
  Some other areas, notably ERCOT in Texas, interpret the second 0.95 PF sub-requi
-rement as being measured at the Point of Interconnection (POI) as they include
- a tie-line from the MPT(s) to the transmission grid in the project.
- Lastly, it should be noted that the exact PF requirement, voltage range,
+rement as being measured at the Point of Interconnection (POI) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "ERCOTREACTIVEV10"
+literal "false"
+
+\end_inset
+
+,since they include a tie-line from the MPT(s) to the transmission grid
+ in the project.
+ Lastly, it should be noted that the exact PF requirement, the voltage range,
  and point of measurement are listed in the interconnection agreement (IA)
  of any project.
  In the following, it will be assumed that the PF requirement is being measured
  at the high side of the MPT for a voltage range of 1.05 Vpu to 0.95 Vpu.
- As will be seen later, this does not make any difference and any other
- PF requirement variation can be studied similarly.
+ However, this paper will show that this high side PF requirement is not
+ a critical component; moreover any other PF requirement variation can be
+ studied in a similar manner.
  
 \end_layout
 
 \begin_layout Standard
 The purpose of any reactive power study is to ensure that the PF requirement
- is met.
- This entails the following:
+ is met, which entails the following:
 \end_layout
 
 \begin_layout Enumerate
 Sizing capacitor or reactor banks.
- Capacitor banks are generally required when the project is exporting reactive
+ Capacitor banks are generally required when a project is exporting reactive
  power to the grid at full load.
  This mode of operation is known as lagging PF.
- Capacitor banks are required since it is not economical to use a substantial
- portion of the MVA rating of the turbine or the inverter for dynamic reactive
- power support.
+ On the one hand, capacitor banks are required since it is not economical
+ to use a substantial portion of the MVA rating of the turbine or the inverter
+ for dynamic reactive power support.
  On the other hand, reactor banks are sometimes required when the project
  is absorbing reactive power from the grid, known as leading PF operation.
  
 \end_layout
 
 \begin_layout Enumerate
-Selecting transformer tap changer settings such that turbine and inverter
+Selecting transformer tap changer settings to ensure that turbine and inverter
  reactive power contribution is maximized.
  This is important since all turbines and inverters have reactive power
  capabilities that depend on the voltage at their terminals.
@@ -365,20 +390,20 @@ Selecting transformer tap changer settings such that turbine and inverter
 
 \begin_layout Enumerate
 If a project has MPTs that are equipped with DETCs, then the DETC of all
- transformers in the project must be set such that the voltage operation
- range of the project is maximized.
+ transformers in the project must be set to maximize the voltage operation
+ range of the project.
  
 \end_layout
 
 \begin_layout Enumerate
-Providing a graph showing the available reactive power at each active power
- level.
+Providing a graph that shows the available reactive power at each active
+ power level.
  This is known as the project P-Q capability chart or curve.
  
 \end_layout
 
 \begin_layout Standard
-The paper is organized as follows: data requirement for any reactive power
+The paper is organized as follows: Data requirement for any reactive power
  model is given in 
 \begin_inset CommandInset ref
 LatexCommand formatted
@@ -391,7 +416,7 @@ noprefix "false"
 
 .
  A big portion of any reactive power study is adjustment of transformer
- tap settings which is given in 
+ tap settings, which is given in 
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "sec:TapChanger"
@@ -424,7 +449,18 @@ noprefix "false"
 \end_inset
 
 .
- Conclusions are provided at the end of the paper.
+ Conclusions are provided in section 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "sec:Conclusions"
+plural "false"
+caps "true"
+noprefix "false"
+
+\end_inset
+
+.
+ An Appendix is supplied at the end of the references.
 \end_layout
 
 \begin_layout Section
@@ -440,17 +476,16 @@ name "sec:Data-Requirement"
 
 \begin_layout Standard
 Positive sequence data for all project components is required.
- Majority of collection system is underground and thus cable resistance,
+ The majority of the collection system is underground; thus, cable resistance,
  reactance, and cable charging capacitance is required.
- Cables are laid in the ground either in trefoil or flat formation.
+ Cables are laid in the ground either in a trefoil or flat formation.
  The cable impedance used should correspond to the formation used.
- Trefoil configuration has slightly more reactance than flat formation due
- to the close proximity of the cable conductors.
- Thus, trefoil configuration produces a bigger capacitor and reactor bank
- size, if one is required since more cable reactance means more dynamic
- MVAr loss across collection system.
+ A trefoil configuration has slightly more reactance than a flat formation
+ due to the close proximity of the cable conductors.
+ If a trefoil configuration is required, more cable reactance means that
+ more dynamic MVArs loss will occur across the collection system.
  Underground cables connecting the individual wind turbine transformers
- (WTTs) or inverter step-up transformers (ISU) are modeled as pi-equivalent
+ (WTTs) or inverter step-up transformers (ISUs) are modeled as pi-equivalent
  segments.
  Typical cable data is given in the 
 \begin_inset CommandInset ref
@@ -471,7 +506,7 @@ Transformer positive sequence impedance is needed along with no load losses.
  Most of the time, the project is designed before transformer test reports
  are available.
  Worst case transformer allowance should be used.
- It is  typical that ISUs and WTTs deviate from their bid data by as much
+ It is  typical for ISUs and WTTs to deviate from their bid data by as much
  as 7.5% per the IEEE standard C57.12.90-2015
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -482,19 +517,19 @@ literal "false"
 
 .
  This seems to be due to the relatively small MVA size of these transformers.
- On the other hand, MPT test report impedance deviates slightly from design
- data.
+ On the other hand, the MPT test report impedance deviates slightly from
+ design data.
  It is safe to assume that the MPT impedance is within 1% of the design
  data.
  Being too conservative with MPT impedance can cause substantial MVAr loss
  across the MPT and leads to a very conservative capacitor or reactor bank
  size.
- This is due to the substantially large MPT impedance compared to the WTTs
+ This is due to the substantially larger MPT impedance compared to the WTTs
  and ISUs.
- Most MPTs in renewable projects are three winding transformers with the
- tertiary winding connected in delta and not connected to any external load.
+ Most MPTs in renewable projects are three winding transformers with a tertiary
+ winding connected in delta and not connected to any external load.
  Thus, modeling the tertiary winding is not required since no-load losses
- only flows in it which is small compared to the overall losses across the
+ only flow in it, which is small compared to the overall losses across the
  MPT.
  Typical transformer data is given in the 
 \begin_inset CommandInset ref
@@ -513,11 +548,11 @@ al MVAr loss for the latest tall turbines.
 \end_layout
 
 \begin_layout Standard
-Transformer tap changer should be modeled as designed.
- MPT tap changer, whether OLTC or DETC, is installed on the high side winding
- while controlling the low side winding.
+A transformer tap changer should be modeled as designed.
+ The MPT tap changer, whether OLTC or DETC, is installed on the high side
+ winding while controlling the low side winding.
  The same goes for the WTTs and ISUs.
- OLTCs typically have thirty-three (33) tap positions, one of which is the
+ OLTCs typically have thirty-three (33) tap positions, one of which is a
  neutral position.
  These tap positions correspond to 1.1 Vpu to 0.9 Vpu in a step size of 0.00625
  Vpu.
@@ -533,7 +568,7 @@ The tie-line positive sequence impedance must be included in the project
  This becomes critical if the PF requirement is at the POI rather than at
  the high side of the MPT.
  A lot of renewable projects are connected to the POI through a short slack
- span and it is negligible in this case.
+ span, which it is negligible in this case.
  Typical tie-line data is given in the 
 \begin_inset CommandInset ref
 LatexCommand nameref
@@ -549,21 +584,21 @@ noprefix "false"
 \end_layout
 
 \begin_layout Standard
-Lastly, inverter and turbine reactive power capability (P-Q curve) should
+Lastly, inverter and turbine reactive power capability (the P-Q curve) should
  be modeled.
  Care should be exercised when modeling any P-Q voltage dependency during
  simulations.
- It is typical that turbines and inverters have P-Q curves that are voltage
+ It is typical for turbines and inverters to have P-Q curves that are voltage
  dependent.
  Typically, turbine and inverters provide more reactive power as the voltage
  at their terminal rises  to a certain point.
- When the voltage exceeds or drops below certain voltage level, typically
+ When the voltage exceeds or drops below a certain voltage level, typically
  1.1 Vpu and 0.9 Vpu, the turbine or inverter capability becomes limited.
- It is thus important to control the voltage at turbine terminals to rated
+ It is, thus, important to control the voltage at turbine terminals to rated
  voltage range to maximize turbine and inverter MVAr contribution.
- Maximizing turbine and inverter MVAr contribution is necessary to minimize
+ Maximizing the turbine and inverter MVAr contribution is necessary to minimize
  the capacitor bank or reactor bank size.
- Voltage control will be detailed in 
+ Voltage control is detailed in 
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "sec:TapChanger"
@@ -584,28 +619,17 @@ noprefix "false"
 
 \end_inset
 
-.
- Two examples of inverter P-Q capability are given in the 
-\begin_inset CommandInset ref
-LatexCommand nameref
-reference "Appendix"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
-.
+ as well as two examples of inverter P-Q capability.
 \end_layout
 
 \begin_layout Standard
 It is important to note two points at the P-Q curves of the turbines and
- inverters: one at maximum active power output, and one at zero active power
- output.
- The point at maximum active power output correlates closely the capacitor
- bank size since the dynamic MVAr loss across collection is maximum.
- It is rare that a renewable project needs a reactor bank at full power
- output to meet the PF requirement.
+ inverters: One at maximum active power output, and the other is at zero
+ active power output.
+ The point at the maximum active power output correlates closely to the
+ capacitor bank size since the dynamic MVAr loss across collection is maximum.
+ A renewable project rarely needs a reactor bank at full power output to
+ meet the PF requirement.
  The reason for this will be shown in 
 \begin_inset CommandInset ref
 LatexCommand formatted
@@ -639,11 +663,11 @@ name "sec:TapChanger"
 \end_layout
 
 \begin_layout Standard
-This section discusses MPT and WTT (ISU in case of solar or storage projects),
- tap changer setting selection.
- Transformer tap changer setting selection is heavily influenced whether
+This section discusses tap changer setting selection of MPTs and WTTs (ISUs
+ in case of solar or storage projects).
+ The transformer tap changer setting selection is heavily influenced whether
  the project has an MPT equipped with OLTC or DETC.
- Both are given in the subsections below.
+ Both are discussed in the subsections below.
  We will use the wind project data in the 
 \begin_inset CommandInset ref
 LatexCommand nameref
@@ -687,10 +711,10 @@ In this section, it is assumed that the MPTs have DETCs instead of OLTCs.
  Several power flow cases should be performed to determine the optimum DETC
  tap settings of the MPTs and WTTs when the project is producing 100% output.
  These power flow cases should correspond to various POI voltages.
- Optimum DETC settings would allow the project to meet the PF requirement
+ Optimal DETC settings would allow the project to meet the PF requirement
  at the POI for the widest possible voltage range.
  In this case, the ISO or TSO must determine the maximum scheduled voltage.
- Assume this is 1.03 Vpu for now.
+ Assume this maximum voltage is 1.03 Vpu for now.
  
 \end_layout
 
@@ -708,13 +732,13 @@ An iterative approach is used to reach optimum DETC settings.
 \end_layout
 
 \begin_layout Enumerate
-The voltage at the 4.2 MW turbine terminals is kept within the range 1.13
- Vpu to 0.87 Vpu, per its reactive power capability.
+The voltage at the 4.2 MW turbine terminals is kept within the range of 1.13
+ Vpu to 0.87 Vpu, based on its reactive power capability.
 \end_layout
 
 \begin_layout Enumerate
-The voltage at the 2.0 MW turbine terminals is kept within the range 1.1 Vpu
- to 0.9 Vpu, per its reactive power capability.
+The voltage at the 2.0 MW turbine terminals is kept within the range of 1.1
+ Vpu to 0.9 Vpu, based on its reactive power capability.
 \end_layout
 
 \begin_layout Enumerate
@@ -744,17 +768,17 @@ With the turbines set to produce maximum reactive power, the remaining reactive
 \end_layout
 
 \begin_layout Itemize
-The first one is by adjusting the DETC settings of the MPTs at 1.05 (+2 tap)
- which effectively reduces the voltage by 0.05 pu throughout the collector
- system.
+The first Vpu reduction is by adjusting the DETC settings of the MPTs at
+ 1.05 (+2 tap) which effectively reduces the voltage by 0.05 Vpu throughout
+ the collector system.
  The remaining voltage reduction is achieved by tapping the turbines with
  the highest voltage at 1.025 (+1 tap).
 \end_layout
 
 \begin_layout Itemize
-The second one is by adjusting the DETC settings of the MPTs at 1.025 (+1
- tap).
- The remaining 0.039 pu voltage reduction can be obtained by tapping some
+The second Vpu reduction is by adjusting the DETC settings of the MPTs at
+ 1.025 (+1 tap).
+ The remaining 0.039 Vpu voltage reduction can be obtained by tapping some
  turbine transformers.
  The turbines with the highest voltage (above 1.125 Vpu) are tapped at 1.05
  (+2 tap).
@@ -770,11 +794,11 @@ The main difference between these two options is that the first option affects
  than 1.1 Vpu voltage at their terminals.
  Just because a reduction of 0.05 Vpu was accomplished using the DETCs of
  the MPTs does not mean that no more turbines will need to be tapped.
- An MPT DETC tap of 1.05 Vpu will cause some loss of reactive power which
- will need to be compensated either by more capacitor banks or more turbine
+ An MPT DETC tap of 1.05 Vpu will cause some loss of reactive power, which
+ must to be compensated by either adding more capacitor banks or more turbine
  reactive power.
  In either of the two cases, this additional reactive power may cause the
- voltage to be above the constraints outlined above in this section.
+ voltage to be above the constraints outlined in this section.
  This is explained in more detailed below in terms of adjusting the MPT
  DETC settings at 1.025 Vpu.
  
@@ -793,13 +817,13 @@ The turbines that will be affected in the second option of setting the DETCs
  necessarily mean that its transformer will be tapped, as it could be the
  case that adjusting the tap of one turbine could affect the voltage at
  a nearby turbine.
- This will depend on what will be done next.
+ This depends on what will be done next.
 \end_layout
 
 \begin_layout Standard
 The turbines that are short listed are sorted in a descending order such
- that the turbine that has the highest overvoltage is tapped first.
- Optimum DETC settings are reached by tapping the WTTs one at a time.
+ that the turbine with the highest overvoltage is tapped first.
+ Optimal DETC settings are reached by tapping the WTTs one at a time.
  This means that the turbine that has the highest voltage is tapped first,
  the power flow is re-solved, more capacitor banks are added to meet the
  0.95 PF requirement, the power flow is re-solved, and the process continues
@@ -816,8 +840,8 @@ noprefix "false"
 \end_inset
 
 .
- After the tap settings of all DETCs are finalized, those tap settings are
- used for all power flow cases to produce the reactive power capability
+ After the tap settings of all the DETCs are finalized, those tap settings
+ are used for all power flow cases to produce the reactive power capability
  of the project at the POI in 
 \begin_inset CommandInset ref
 LatexCommand formatted
@@ -869,8 +893,8 @@ name "fig:Iterative-Process-to"
 
 \begin_layout Standard
 The next step involves determining the size of the capacitor banks.
- The voltage at the POI is then scheduled at 0.95 Vpu in the case with all
- DETCs set per the previous paragraph as given in 
+ The voltage at the POI is then scheduled at 0.95 Vpu in the case wherein
+ all DETCs were set as described in the previous paragraph as given in 
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "tab:Required-DETC-Settings"
@@ -1323,13 +1347,13 @@ The main problem with wind projects that have MPTs equipped with DETCs is
  An OLTC keeps the low side bus voltage at a scheduled value whenever the
  POI voltage changes.
  But in case of a MPT DETC, changes in the POI voltage propagate to the
- low side with no means to control them.
+ low side with no means of control.
  For this reason, all transformer tap settings are to be calculated based
  on the highest POI voltage possible, since this corresponds to the highest
  collection and turbine terminal voltage.
  For the same reason, the capacitor bank size must be calculated based on
  the lowest POI voltage.
- This is because the MVAr of capacitor bank is proportional to the square
+ This is because the MVAr of the capacitor bank is proportional to the square
  of the bus voltage.
  
 \end_layout
@@ -1339,7 +1363,7 @@ Lastly, the maximum continuous cable voltage will play a role in determining
  the MPT DETC.
  If the cables were to run at a maximum of 1.065 Vpu, then an MPT DETC of
  1.05 Vpu (+2 tap) would have been the only solution.
- Same thing goes for the turbines.
+ This same situation also hold trues for turbines.
  If the voltage at the turbine terminals were to be limited to 1.1 Vpu, the
  1.025 Vpu tap at the WTTs would not be feasible.
  
@@ -1358,7 +1382,7 @@ name "subsec:OLTC"
 
 \begin_layout Standard
 In this section, we consider that the project has the exact same data as
- given in 
+ that given in 
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "subsec:DETC"
@@ -1409,7 +1433,7 @@ noprefix "false"
 \begin_inset Formula $\pm5\%$
 \end_inset
 
- in case of the DETC.
+ in the case of the DETC.
  In the current example, the capacitor banks needed are 1.5 MVArs per bus.
  This is to be compared against the 6.5 MVAr obtained in 
 \begin_inset CommandInset ref
@@ -1430,7 +1454,7 @@ noprefix "false"
 \begin_layout Standard
 When the turbine MVAr contribution is highly dependent on the turbine terminal
  voltage, the OLTC can still be used to satisfy the voltage constraints.
- However, adjustments of the DETC of WTTs will probably need to happen to
+ However, adjustments to the DETC of WTTs will probably need to happen to
  bring the voltage at turbine terminals to levels that can maximize turbine
  MVAr contribution.
  In some other instances, such optimization is not possible due to the length
@@ -1456,7 +1480,7 @@ Once the capacitor bank size is determined, the number of steps of the capacitor
 \end_layout
 
 \begin_layout Enumerate
-The more the number of steps, the more cost of the capacitor bank.
+The more the number of steps, the greater cost of the capacitor bank.
  Some projects end up with a bigger capacitor bank step since it is more
  economical to have one large step instead of having more steps.
 \end_layout
@@ -1464,7 +1488,7 @@ The more the number of steps, the more cost of the capacitor bank.
 \begin_layout Enumerate
 The space available at the substation.
  Sometimes, it is not feasible to fit in more steps in the yard and there
- is no way around having larger step sizes.
+ is no way to avoid larger step sizes.
  
 \end_layout
 
@@ -1475,7 +1499,7 @@ The flicker, which is the voltage rise once the capacitor bank step is switched
 \end_layout
 
 \begin_layout Standard
-The voltage rise when one step of the capacitor banks are engaged is given
+The voltage rise when one step of the capacitor banks isre engaged is expressed
  by the following equation taken from IEEE std 1036-2020
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -1499,7 +1523,7 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-Where 
+where 
 \begin_inset Formula $Q_{step}$
 \end_inset
 
@@ -1523,8 +1547,8 @@ Where
 \begin_layout Standard
 The flicker is generally a customer requirement.
  The most typical requirement is 3%.
- Projects that are built in remote areas tend to have large number of capacitor
- bank steps since the available short circuit is low.
+ Projects that are built in remote areas tend to have a large number of
+ capacitor bank steps since the available short circuit is low.
  
 \end_layout
 
@@ -1542,7 +1566,7 @@ name "sec:PQCapbiloty"
 \begin_layout Standard
 Once the capacitor bank size and DETC tap settings are determined, various
  power flow cases are run to determine the reactive power capability, also
- known as power factor capability, of the project at the POI.
+ known as the power factor capability, of the project at the POI.
  
 \end_layout
 
@@ -1550,12 +1574,12 @@ Once the capacitor bank size and DETC tap settings are determined, various
 Various power flow cases are created at different output levels and at different
  POI voltage levels.
  At each output level and voltage level, a lagging and leading power flow
- case are created.
+ case is created.
  The wind turbines are dispatched to supply or absorb as much reactive power
  as possible to meet the PF requirement at the POI.
  To calculate the maximum reactive power that the project is capable of
- supplying in case of lagging PF, the turbines are set to supply as much
- reactive power without the voltage at their terminals exceeding their limits
+ supplying in case of a lagging PF, the turbines are set to supply as much
+ reactive power possible without exceeding the voltage limits at their terminals
  with the cap banks engaged at all output levels.
  In leading PF cases, the MVArs of turbines were adjusted observing the
  constraints in 
@@ -1569,17 +1593,17 @@ noprefix "false"
 \end_inset
 
  with the capacitor banks deenergized at all output levels.
- A break point at added based on the P-Q curve of each turbine.
+ A break point is added based on the P-Q curve of each turbine.
  If there is a break point for the first turbine at 1.5 MW, then the same
  breaker point would be used for the second turbine.
  
 \end_layout
 
 \begin_layout Standard
-In case of MPTs with DETC, analysis reveals that the wind project will be
- able to provide 0.95 leading to 0.95 lagging PF for the voltage range of
- 1.05 Vpu to 0.97 Vpu at the POI.
- This holds regardless of the way the DETCs are set.
+In the case of MPTs with DETC, analysis reveals that the wind project can
+ provide a 0.95 leading to a 0.95 lagging PF for the voltage range of 1.05
+ Vpu to 0.97 Vpu at the POI.
+ This holds true regardless of the way the DETCs are set.
  The full reactive power capability of the project at different voltage
  levels is provided in 
 \begin_inset CommandInset ref
@@ -1601,7 +1625,7 @@ status collapsed
 \align center
 \begin_inset Graphics
 	filename Graphics/PQDETC.tif
-	scale 55
+	width 9cm
 
 \end_inset
 
@@ -1626,15 +1650,25 @@ name "fig:P-Q-Capability-ofDETC"
 
 \end_inset
 
-As can be seen from the graph, the project can meet the lagging PF requirement
- at certain output levels for the voltage range of 1.05 Vpu to 0.95 Vpu.
+As can be seen from 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:P-Q-Capability-ofDETC"
+plural "false"
+caps "true"
+noprefix "false"
+
+\end_inset
+
+, the project can meet the lagging PF requirement at certain output levels
+ for the voltage range of 1.05 Vpu to 0.95 Vpu.
  Also, the project is not able to provide 0.95 leading PF at certain output
  levels if the voltage at the POI is less than 0.97 Vpu.
  
 \end_layout
 
 \begin_layout Standard
-In case of the OLTC, the project capability is given in 
+In the case of OLTC, the project capability is given in 
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "fig:PQOLTC"
@@ -1644,6 +1678,7 @@ noprefix "false"
 
 \end_inset
 
+.
  As can be seen from 
 \begin_inset CommandInset ref
 LatexCommand formatted
@@ -1654,7 +1689,7 @@ noprefix "false"
 
 \end_inset
 
-, the P-Q capability of the project is better and now the project can meet
+, the P-Q capability of the project is better and the project can now meet
  the PF requirement for the full voltage range from 0.95 Vpu to 1.05 Vpu.
 \begin_inset Float figure
 wide false
@@ -1665,7 +1700,7 @@ status collapsed
 \align center
 \begin_inset Graphics
 	filename Graphics/PQOLTC.tif
-	scale 60
+	width 9cm
 
 \end_inset
 
@@ -1718,9 +1753,9 @@ noprefix "false"
 It should be noted from the figures in this section that the project can
  meet the leading PF by a large margin.
  This is due to the reactive power capability of the turbines used.
- Some old turbine technology cannot absorb any reactive power at standstill.
- This necessitates installing a reactor bank to compensate for cable charging
- current at standstill.
+ Some old turbine technology cannot absorb any reactive power at standstill
+ conditions, which necessitates installing a reactor bank to compensate
+ for cable charging current at standstill.
  
 \begin_inset Float figure
 wide false
@@ -1761,15 +1796,36 @@ name "fig:MAxVolt103Vpu"
 
 \begin_layout Section
 Conclusions 
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Conclusions"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 A detailed account on reactive power studies for renewable projects is given.
- The difference between voltage control when the project is equipped with
+ The differences between voltage control when the project is equipped with
  DETC as opposed to OLTC is explained.
  Sizing and organizing the capacitor banks are shown.
+ It is shown that the capacitor bank size in case of projects that have
+ MPTs equipped with OLTC is less than those projects does not have OLTCs.
  Typical collection and system data are also provided.
  
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+btprint "btPrintCited"
+bibfiles "References"
+options "IEEEtran"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Appendix
@@ -1802,9 +1858,6 @@ literal "false"
 
 .
  
-\end_layout
-
-\begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
@@ -1832,7 +1885,7 @@ status collapsed
 
 \end_inset
 
- 
+
 \begin_inset Float figure
 wide false
 sideways false
@@ -1903,7 +1956,7 @@ Cable Type
 \begin_inset Text
 
 \begin_layout Plain Layout
-R 
+R
 \end_layout
 
 \begin_layout Plain Layout
@@ -1923,7 +1976,7 @@ R
 \begin_inset Formula $X_{L}$
 \end_inset
 
- 
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -1943,7 +1996,7 @@ R
 \begin_inset Formula $Capacitance$
 \end_inset
 
- 
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -2292,7 +2345,7 @@ No Load kW Losses
 \begin_inset Text
 
 \begin_layout Plain Layout
-7.5 
+7.5
 \end_layout
 
 \end_inset
@@ -2301,7 +2354,7 @@ No Load kW Losses
 \begin_inset Text
 
 \begin_layout Plain Layout
-10.2 
+10.2
 \end_layout
 
 \end_inset
@@ -2312,7 +2365,7 @@ No Load kW Losses
 \begin_inset Text
 
 \begin_layout Plain Layout
-MVA 
+MVA
 \end_layout
 
 \end_inset
@@ -2474,7 +2527,7 @@ Cable Length (m)
 \begin_inset Text
 
 \begin_layout Plain Layout
-80 
+80
 \end_layout
 
 \end_inset
@@ -2496,14 +2549,11 @@ Cable Length (m)
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
  
 \begin_inset Float table
+placement H
 wide false
 sideways false
 status collapsed
@@ -2567,7 +2617,7 @@ R [
 \end_inset
 
  [
-\begin_inset Formula $\mu\varOmega$
+\begin_inset Formula $\mu\mho$
 \end_inset
 
 ]
@@ -2612,14 +2662,11 @@ R [
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status collapsed
@@ -2648,6 +2695,7 @@ status collapsed
 
 
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status collapsed
@@ -2675,22 +2723,6 @@ status collapsed
 \end_inset
 
  
-\begin_inset Newpage clearpage
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset bibtex
-LatexCommand bibtex
-btprint "btPrintCited"
-bibfiles "References"
-options "IEEEtran"
-
-\end_inset
-
-
 \end_layout
 
 \end_body
